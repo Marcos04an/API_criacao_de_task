@@ -76,7 +76,6 @@ POSTGRES_DATABASE_URL ----------------+
                                   PostgreSQL
 
 
-As migrations criam as tabelas, índices únicos e a chave estrangeira. Elas devem ser aplicadas antes do uso da API.
 
 ### Como o MongoDB é conectado aos logs de erro?
 
@@ -110,7 +109,6 @@ Erros esperados são instâncias de AppError e preservam o status definido (por 
 
 Se o MongoDB estiver indisponível, a falha do registro é capturada e enviada ao console.error; a API ainda devolve ao cliente a resposta do erro original. Assim, a indisponibilidade do banco de logs não substitui o erro de negócio.
 
-> Atenção: o log atual grava integralmente body, params, query e stack. Em produção, dados sensíveis devem ser mascarados, uma política de retenção deve ser definida e a collection deve ter controle de acesso.
 
 ## Relacionamento entre usuário e tarefa
 

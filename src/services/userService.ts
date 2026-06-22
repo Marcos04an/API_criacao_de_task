@@ -105,7 +105,9 @@ class UserService {
 
         this.validateUserOwnership(id, authenticatedUserId)
 
+        // Verificar se o usuário tem tarefas vinculadas
         const tasks = await prisma.$queryRaw<{ count: number }[]>`
+        // Consulta SQL para contar o número de tarefas vinculadas ao usuário
             SELECT COUNT(*)::int AS count
             FROM "Task"
             WHERE "userId" = ${id}
